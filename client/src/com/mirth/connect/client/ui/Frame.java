@@ -4806,47 +4806,7 @@ public class Frame extends JXFrame {
     }
 
     public void doHelp() {
-        final String workingId = startWorking("Retrieving help URL...");
-
-        SwingWorker<String, Void> worker = new SwingWorker<String, Void>() {
-            @Override
-            protected String doInBackground() throws Exception {
-                return HttpUtil.executeGetRequest(BrandingConstants.HELP_URL_LOCATION, 30000, true, PlatformUI.HTTPS_PROTOCOLS, PlatformUI.HTTPS_CIPHER_SUITES);
-            }
-
-            @Override
-            protected void done() {
-                String url = userPreferences.get("helpDefaultLocation", BrandingConstants.HELP_DEFAULT_LOCATION);
-
-                try {
-                    String webhelpJson = get();
-                    ObjectNode webhelpObj = (ObjectNode) new ObjectMapper().readTree(webhelpJson);
-
-                    // Get version-specific node, or "default"
-                    JsonNode urlNode;
-                    if (webhelpObj.has(Version.getLatest().toString())) {
-                        urlNode = webhelpObj.get(Version.getLatest().toString());
-                    } else {
-                        urlNode = webhelpObj.get("default");
-                    }
-
-                    String newUrl = urlNode.asText();
-                    
-                    if (StringUtils.isNotBlank(newUrl)) {
-                        url = newUrl;
-                        userPreferences.put("helpDefaultLocation", url);
-                    }
-                } catch (Throwable t) {
-                    logger.error("Unable to retrieve help URL, using default.", t);
-                } finally {
-                    stopWorking(workingId);
-                }
-
-                BareBonesBrowserLaunch.openURL(url);
-            }
-        };
-
-        worker.execute();
+        BareBonesBrowserLaunch.openURL(BrandingConstants.HELP_URL_LOCATION);
     }
 
     public void goToNotifications() {
