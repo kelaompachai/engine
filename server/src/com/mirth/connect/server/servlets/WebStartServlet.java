@@ -350,7 +350,7 @@ public class WebStartServlet extends HttpServlet {
         informationElement.appendChild(titleElement);
 
         Element vendorElement = document.createElement("vendor");
-        vendorElement.setTextContent(BrandingConstants.PRODUCT_NAME);
+        vendorElement.setTextContent(BrandingConstants.VENDOR_NAME);
         informationElement.appendChild(vendorElement);
 
         jnlpElement.appendChild(informationElement);
