@@ -728,6 +728,8 @@ public class SettingsPanelServer extends AbstractSettingsPanel {
         provideUsageStatsButtonGroup.add(provideUsageStatsNoRadio);
 
         provideUsageStatsMoreInfoLabel = new JLabel("<html><font color=blue><u>More Info</u></font></html>");
+        provideUsageStatsMoreInfoLabel.setEnabled(false);
+        provideUsageStatsMoreInfoLabel.setVisible(false);
         provideUsageStatsMoreInfoLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
                 provideUsageStatsMoreInfoLabelMouseClicked(evt);
