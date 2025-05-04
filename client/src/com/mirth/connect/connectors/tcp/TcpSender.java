@@ -23,7 +23,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import com.mirth.connect.client.ui.*;
+import com.mirth.connect.client.ui.BrandingConstants;
+import com.mirth.connect.client.ui.ConnectorTypeDecoration;
+import com.mirth.connect.client.ui.Frame;
+import com.mirth.connect.client.ui.LoadedExtensions;
+import com.mirth.connect.client.ui.PlatformUI;
+import com.mirth.connect.client.ui.UIConstants;
 import net.miginfocom.swing.MigLayout;
 
 import org.apache.commons.lang3.math.NumberUtils;

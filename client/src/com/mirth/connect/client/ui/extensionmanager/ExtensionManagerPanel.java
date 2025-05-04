@@ -21,7 +21,14 @@ import javax.swing.SwingWorker;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import com.mirth.connect.client.ui.*;
+import com.mirth.connect.client.ui.BrandingConstants;
+import com.mirth.connect.client.ui.CellData;
+import com.mirth.connect.client.ui.Frame;
+import com.mirth.connect.client.ui.ImageCellRenderer;
+import com.mirth.connect.client.ui.Mirth;
+import com.mirth.connect.client.ui.PlatformUI;
+import com.mirth.connect.client.ui.RefreshTableModel;
+import com.mirth.connect.client.ui.UIConstants;
 import org.jdesktop.swingx.decorator.Highlighter;
 import org.jdesktop.swingx.decorator.HighlighterFactory;
 
