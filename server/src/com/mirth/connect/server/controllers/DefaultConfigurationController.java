@@ -1111,7 +1111,7 @@ public class DefaultConfigurationController extends ConfigurationController {
             DirectoryResourceProperties defaultResource = new DirectoryResourceProperties();
             defaultResource.setId(ResourceProperties.DEFAULT_RESOURCE_ID);
             defaultResource.setName(ResourceProperties.DEFAULT_RESOURCE_NAME);
-            defaultResource.setDescription(String.format("Loads libraries from the custom-lib folder in the %s Connect home directory.", BrandingConstants.PRODUCT_NAME));
+            defaultResource.setDescription(String.format("Loads libraries from the custom-lib folder in the %s home directory.", BrandingConstants.PRODUCT_NAME));
             defaultResource.setIncludeWithGlobalScripts(true);
             defaultResource.setDirectory("custom-lib");
 
