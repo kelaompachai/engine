@@ -36,6 +36,7 @@ public class BrandingConstants {
     public static final String HOMEPAGE_URL = "https://openintegrationengine.org/";
 
     // Icons
+    // Favicon must be at 32px x 32px scale
     public static final ImageIcon FAVICON = new ImageIcon(com.mirth.connect.client.ui.Frame.class.getResource("images/branding/rendered/oie_logo_favicon.png"));
     // These images must be at 215px x 30px scale
     public static final ImageIcon LOGO = new ImageIcon(com.mirth.connect.client.ui.Frame.class.getResource("images/branding/rendered/oie_logo_color.png"));
