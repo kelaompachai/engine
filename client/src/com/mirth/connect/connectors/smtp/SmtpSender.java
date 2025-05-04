@@ -28,6 +28,13 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
+import net.miginfocom.swing.MigLayout;
+
+import org.apache.commons.lang3.StringUtils;
+import org.jdesktop.swingx.decorator.Highlighter;
+import org.jdesktop.swingx.decorator.HighlighterFactory;
+
+import com.mirth.connect.client.core.ClientException;
 import com.mirth.connect.client.ui.BrandingConstants;
 import com.mirth.connect.client.ui.CharsetEncodingInformation;
 import com.mirth.connect.client.ui.ConnectorTypeDecoration;
@@ -36,13 +43,6 @@ import com.mirth.connect.client.ui.Mirth;
 import com.mirth.connect.client.ui.PlatformUI;
 import com.mirth.connect.client.ui.TextFieldCellEditor;
 import com.mirth.connect.client.ui.UIConstants;
-import net.miginfocom.swing.MigLayout;
-
-import org.apache.commons.lang3.StringUtils;
-import org.jdesktop.swingx.decorator.Highlighter;
-import org.jdesktop.swingx.decorator.HighlighterFactory;
-
-import com.mirth.connect.client.core.ClientException;
 import com.mirth.connect.client.ui.components.MirthComboBox;
 import com.mirth.connect.client.ui.components.MirthIconTextField;
 import com.mirth.connect.client.ui.components.MirthPasswordField;
