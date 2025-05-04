@@ -713,12 +713,18 @@ public class SettingsPanelServer extends AbstractSettingsPanel {
 
         provideUsageStatsYesRadio = new MirthRadioButton("Yes");
         provideUsageStatsYesRadio.setBackground(getBackground());
-        provideUsageStatsYesRadio.setToolTipText("<html>Toggles sending usage statistics to NextGen Healthcare.  These statistics <br>do not contain any PHI or channel/script implementations,<br> and help NextGen Healthcare determine which connectors or areas of<br>Mirth Connect are most widely used.</html>");
+        provideUsageStatsYesRadio.setToolTipText(String.format(
+            "<html>Toggles sending usage statistics to %s. These statistics <br>do not contain any PHI or channel/script implementations.</html>",
+            BrandingConstants.VENDOR_NAME
+        ));
         provideUsageStatsButtonGroup.add(provideUsageStatsYesRadio);
 
         provideUsageStatsNoRadio = new MirthRadioButton("No");
         provideUsageStatsNoRadio.setBackground(getBackground());
-        provideUsageStatsNoRadio.setToolTipText("<html>Toggles sending usage statistics to NextGen Healthcare.  These statistics <br>do not contain any PHI or channel/script implementations,<br> and help NextGen Healthcare determine which connectors or areas of<br>Mirth Connect are most widely used.</html>");
+        provideUsageStatsNoRadio.setToolTipText(String.format(
+            "<html>Toggles sending usage statistics to %s. These statistics <br>do not contain any PHI or channel/script implementations.</html>",
+            BrandingConstants.VENDOR_NAME
+        ));
         provideUsageStatsButtonGroup.add(provideUsageStatsNoRadio);
 
         provideUsageStatsMoreInfoLabel = new JLabel("<html><font color=blue><u>More Info</u></font></html>");
