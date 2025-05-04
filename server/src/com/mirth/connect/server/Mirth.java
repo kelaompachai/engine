@@ -547,6 +547,7 @@ public class Mirth extends Thread {
             versionProperties.getString("mirth.date")
         );
         logger.info("This product was developed by NextGen Healthcare (https://www.nextgen.com) and its contributors (c)2005-2024.");
+        logger.info("Open Integration Engine contributors (c)2025.");
         logger.info(
             "Running {} {} on {} ({}, {}), {}, with charset {}.",
             System.getProperty("java.vm.name"),

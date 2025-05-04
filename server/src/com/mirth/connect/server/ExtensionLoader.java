@@ -206,7 +206,7 @@ public class ExtensionLoader {
                                 pluginMetaDataMap.put(metaData.getName(), (PluginMetaData) metaData);
                             }
                         } else {
-                            logger.error("Extension \"{}\" is not compatible with this version of %s and was not loaded. Please install a compatible version.", metaData.getName(), BrandingConstants.PRODUCT_NAME);
+                            logger.error("Extension \"{}\" is not compatible with this version of {} and was not loaded. Please install a compatible version.", metaData.getName(), BrandingConstants.PRODUCT_NAME);
                             invalidMetaDataMap.put(metaData.getName(), metaData);
                         }
                     } catch (Exception e) {
