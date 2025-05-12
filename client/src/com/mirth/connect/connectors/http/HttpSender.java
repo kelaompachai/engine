@@ -42,13 +42,6 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-import com.mirth.connect.client.ui.BrandingConstants;
-import com.mirth.connect.client.ui.ConnectorTypeDecoration;
-import com.mirth.connect.client.ui.Frame;
-import com.mirth.connect.client.ui.Mirth;
-import com.mirth.connect.client.ui.PlatformUI;
-import com.mirth.connect.client.ui.TextFieldCellEditor;
-import com.mirth.connect.client.ui.UIConstants;
 import net.miginfocom.swing.MigLayout;
 
 import org.apache.commons.collections4.MapUtils;
@@ -58,6 +51,13 @@ import org.jdesktop.swingx.decorator.Highlighter;
 import org.jdesktop.swingx.decorator.HighlighterFactory;
 
 import com.mirth.connect.client.core.ClientException;
+import com.mirth.connect.client.ui.BrandingConstants;
+import com.mirth.connect.client.ui.ConnectorTypeDecoration;
+import com.mirth.connect.client.ui.Frame;
+import com.mirth.connect.client.ui.Mirth;
+import com.mirth.connect.client.ui.PlatformUI;
+import com.mirth.connect.client.ui.TextFieldCellEditor;
+import com.mirth.connect.client.ui.UIConstants;
 import com.mirth.connect.client.ui.components.MirthCheckBox;
 import com.mirth.connect.client.ui.components.MirthComboBox;
 import com.mirth.connect.client.ui.components.MirthIconTextField;

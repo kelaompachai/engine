@@ -11,7 +11,6 @@ package com.mirth.connect.client.ui;
 
 import java.awt.Dimension;
 import java.awt.Point;
-import java.util.Calendar;
 
 import com.mirth.connect.client.ui.util.DisplayUtil;
 
@@ -68,24 +67,24 @@ public class AboutMirth extends MirthDialog {
 
         content.append("Java version: ").append(System.getProperty("java.version")).append("\n\n");
 
-        content.append("(c) 2005-2024 NextGen Healthcare. All rights reserved. Visit https://www.nextgen.com\n\n");
-        content.append("(c) 2025 Open Integration Engine contributors. Visit https://openintegrationengine.com\n\n");
+        content.append("(c) 2025 Open Integration Engine contributors. Visit https://openintegrationengine.org\n\n");
+        content.append("(c) 2005-2024 NextGen Healthcare.\n\n");
         content.append("The following is a list of acknowledgements for third-party software that is included with ").append(BrandingConstants.PRODUCT_NAME).append(":\n\n");
-        content.append("This product includes software developed by the Apache Software Foundation (https://www.apache.org/).\n\n");
+        content.append("This product includes software developed by the Apache Software Foundation (http://www.apache.org/).\n\n");
         content.append("This product includes all or a portion of the HL7 Vocabulary database, or is derived from the HL7 Vocabulary database, subject to a license from Health Level Seven, Inc.\n\n");
-        content.append("This product includes a portion of images from https://www.famfamfam.com/lab/icons/silk/.\n\n");
+        content.append("This product includes a portion of images from http://www.famfamfam.com/lab/icons/silk/.\n\n");
         content.append("This product includes a portion of images from https://www.fatcow.com/free-icons.\n\n");
-        content.append("This product includes software developed by the Indiana University Extreme! Lab (https://www.extreme.indiana.edu/).\n\n");
-        content.append("This product includes the Flying Saucer XHTML renderer library, licensed under the LGPL version 2.1 (https://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
-        content.append("This product includes the jTDS JDBC driver, licensed under the LGPL version 2.1 (https://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
-        content.append("This product includes software developed by the JDOM Project (https://www.jdom.org/).\n\n");
-        content.append("This product includes software developed by the SAXPath Project (https://www.saxpath.org/).\n\n");
-        content.append("This product includes the JCIFS SMB client library in Java version 1.3.17, copyright (C) 2002  \"Michael B. Allen\" <jcifs at samba dot org> and \"Eric Glass\" <jcifs at samba dot org>, licensed under the LGPL version 2.1 (https://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
-        content.append("This product includes the Pdf-renderer library (https://java.net/projects/pdf-renderer/), portions copyright Sun Microsystems, Inc., Pirion Systems Pty Ltd, intarsys consulting GmbH and Adobe Systems Incorporated. It is licensed under the LGPL version 2.1 (https://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
-        content.append("This product includes software developed by the JDOM Project (https://www.jdom.org/).\n\n");
+        content.append("This product includes software developed by the Indiana University Extreme! Lab (http://www.extreme.indiana.edu/).\n\n");
+        content.append("This product includes the Flying Saucer XHTML renderer library, licensed under the LGPL version 2.1 (http://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
+        content.append("This product includes the jTDS JDBC driver, licensed under the LGPL version 2.1 (http://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
+        content.append("This product includes software developed by the JDOM Project (http://www.jdom.org/).\n\n");
+        content.append("This product includes software developed by the SAXPath Project (http://www.saxpath.org/).\n\n");
+        content.append("This product includes the JCIFS SMB client library in Java version 1.3.17, copyright (C) 2002  \"Michael B. Allen\" <jcifs at samba dot org> and \"Eric Glass\" <jcifs at samba dot org>, licensed under the LGPL version 2.1 (http://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
+        content.append("This product includes the Pdf-renderer library (https://java.net/projects/pdf-renderer/), portions copyright Sun Microsystems, Inc., Pirion Systems Pty Ltd, intarsys consulting GmbH and Adobe Systems Incorporated. It is licensed under the LGPL version 2.1 (http://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
+        content.append("This product includes software developed by the JDOM Project (http://www.jdom.org/).\n\n");
         content.append("This product includes software developed by xerial.org (Taro L. Saito) (https://github.com/xerial/sqlite-jdbc).\n\n");
-        content.append("This product includes the SwingLabs SwingX library, copyright (c) 2005-2006 Sun Microsystems, Inc., licensed under the LGPL version 2.1 (https://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
-        content.append("This product includes libraries from OpenJFX, which is licensed under the GNU General Public License version 2, with the Classpath Exception (https://openjdk.java.net/legal/gplv2+ce.html). The source code for OpenJFX is available at: https://jdk.java.net/openjfx/\n\n");
+        content.append("This product includes the SwingLabs SwingX library, copyright (c) 2005-2006 Sun Microsystems, Inc., licensed under the LGPL version 2.1 (http://www.gnu.org/licenses/lgpl-2.1.html).\n\n");
+        content.append("This product includes libraries from OpenJFX, which is licensed under the GNU General Public License version 2, with the Classpath Exception (http://openjdk.java.net/legal/gplv2+ce.html). The source code for OpenJFX is available at: http://jdk.java.net/openjfx/\n\n");
 
         aboutContent.setText(content.toString());
     }

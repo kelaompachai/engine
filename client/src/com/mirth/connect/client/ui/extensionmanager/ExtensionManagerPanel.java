@@ -21,6 +21,10 @@ import javax.swing.SwingWorker;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import org.jdesktop.swingx.decorator.Highlighter;
+import org.jdesktop.swingx.decorator.HighlighterFactory;
+
+import com.mirth.connect.client.core.ClientException;
 import com.mirth.connect.client.ui.BrandingConstants;
 import com.mirth.connect.client.ui.CellData;
 import com.mirth.connect.client.ui.Frame;
@@ -29,10 +33,6 @@ import com.mirth.connect.client.ui.Mirth;
 import com.mirth.connect.client.ui.PlatformUI;
 import com.mirth.connect.client.ui.RefreshTableModel;
 import com.mirth.connect.client.ui.UIConstants;
-import org.jdesktop.swingx.decorator.Highlighter;
-import org.jdesktop.swingx.decorator.HighlighterFactory;
-
-import com.mirth.connect.client.core.ClientException;
 import com.mirth.connect.client.ui.components.MirthTable;
 import com.mirth.connect.model.ConnectorMetaData;
 import com.mirth.connect.model.MetaData;

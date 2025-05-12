@@ -100,7 +100,7 @@ public class ErrorDialog extends MirthDialog {
         question.setBackground(new java.awt.Color(224, 223, 227));
         question.setBorder(null);
         question.setEditable(false);
-        question.setText("An unexpected error has occurred. Check \"mirth.log\" and client console output for further details.");
+        question.setText("An unexpected error has occurred. Check the server log and client console output for further details.");
         question.setFocusable(false);
         questionPane.setViewportView(question);
 
