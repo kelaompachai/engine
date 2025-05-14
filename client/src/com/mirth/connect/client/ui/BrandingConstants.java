@@ -4,8 +4,8 @@ import javax.swing.ImageIcon;
 
 public class BrandingConstants {
 
-    public static final String PRODUCT_NAME = "OpenIntegrationEngine";
-    public static final String VENDOR_NAME = "OpenIntegrationEngine";
+    public static final String PRODUCT_NAME = "Open Integration Engine";
+    public static final String VENDOR_NAME = "Open Integration Engine";
 
     /*
         Sets the title of the Administrator window
