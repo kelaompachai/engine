@@ -685,7 +685,7 @@ public class SettingsPanelServer extends AbstractSettingsPanel {
 
         environmentNameLabel = new JLabel("Environment name:");
         environmentNameField = new MirthTextField();
-        environmentNameField.setToolTipText("<html>The name of this Mirth Connect environment. There is one environment name per Mirth Connect database.</html>");
+        environmentNameField.setToolTipText(String.format("<html>The name of this environment. There is one environment name per %s database.</html>", BrandingConstants.PRODUCT_NAME));
 
         serverNameLabel = new JLabel("Server name:");
         serverNameField = new MirthTextField();

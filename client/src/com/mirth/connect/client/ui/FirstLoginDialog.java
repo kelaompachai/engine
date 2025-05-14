@@ -109,7 +109,7 @@ public class FirstLoginDialog extends javax.swing.JDialog implements UserDialogI
         contentTextPane = new javax.swing.JTextPane();
         
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Welcome to Mirth Connect");
+        setTitle(String.format("Welcome to %s", BrandingConstants.PRODUCT_NAME));
 
         channelOverview.setBackground(new java.awt.Color(255, 255, 255));
         channelOverview.setName(""); // NOI18N
@@ -123,7 +123,7 @@ public class FirstLoginDialog extends javax.swing.JDialog implements UserDialogI
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("<html>Welcome to Mirth<sup>&#174;</sup> Connect by NextGen<sup>&#174;</sup> Healthcare</html>");
+        jLabel2.setText(String.format("<html>Welcome to %s</html>", BrandingConstants.PRODUCT_NAME));
 
         javax.swing.GroupLayout mirthHeadingPanel1Layout = new javax.swing.GroupLayout(mirthHeadingPanel1);
         mirthHeadingPanel1.setLayout(mirthHeadingPanel1Layout);
@@ -152,8 +152,8 @@ public class FirstLoginDialog extends javax.swing.JDialog implements UserDialogI
         
         registerCheckBox.setBackground(new java.awt.Color(255, 255, 255));
         registerCheckBox.setSelected(true);
-        registerCheckBox.setText("Register user with NextGen Healthcare");
-        registerCheckBox.setToolTipText("<html>Register your user information with NextGen Healthcare to help us<br>improve the product and provide better service.</html>");
+        registerCheckBox.setText(String.format("Register user with %s", BrandingConstants.VENDOR_NAME));
+        registerCheckBox.setToolTipText(String.format("<html>Register your user information with %s to help us<br>improve the product and provide better service.</html>", BrandingConstants.VENDOR_NAME));
         registerCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerCheckBoxActionPerformed(evt);
@@ -162,7 +162,7 @@ public class FirstLoginDialog extends javax.swing.JDialog implements UserDialogI
         
         userConsentCheckBox.setBackground(new java.awt.Color(255, 255, 255));
         userConsentCheckBox.setSelected(true);
-        userConsentCheckBox.setText("I consent to receive email updates and marketing messages from NextGen Healthcare.");
+        userConsentCheckBox.setText(String.format("I consent to receive email updates and marketing messages from %s.", BrandingConstants.VENDOR_NAME));
         userConsentCheckBox.setToolTipText("<html></html>"); 
 
         contentTextPane.setContentType("text/html");
