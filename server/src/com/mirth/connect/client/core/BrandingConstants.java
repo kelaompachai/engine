@@ -6,4 +6,6 @@ public class BrandingConstants {
     public static final String VENDOR_NAME = "Open Integration Engine";
 
     public static final String CLIENT_CONNECTION_HEADER = "openintegrationengine-client";
+
+    public static final String SERVER_CERTIFICATE_CN = "oie-engine";
 }

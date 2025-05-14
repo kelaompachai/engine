@@ -1530,7 +1530,7 @@ public class DefaultConfigurationController extends ConfigurationController {
             logger.debug("generated new key pair for CA cert using provider: " + provider.getName());
 
             // Generate CA cert
-            X500Name caSubjectName = new X500Name("CN=Mirth Connect Certificate Authority");
+            X500Name caSubjectName = new X500Name(String.format("CN=%s Certificate Authority", BrandingConstants.PRODUCT_NAME));
             SubjectPublicKeyInfo caSubjectKey = SubjectPublicKeyInfo.getInstance(caKeyPair.getPublic().getEncoded());
             X509v3CertificateBuilder certBuilder = new X509v3CertificateBuilder(caSubjectName, BigInteger.ONE, startDate, expiryDate, caSubjectName, caSubjectKey);
             certBuilder.addExtension(org.bouncycastle.asn1.x509.Extension.basicConstraints, true, new BasicConstraints(0));
@@ -1541,7 +1541,7 @@ public class DefaultConfigurationController extends ConfigurationController {
             KeyPair sslKeyPair = keyPairGenerator.generateKeyPair();
             logger.debug("generated new key pair for SSL cert using provider: " + provider.getName());
 
-            X500Name sslSubjectName = new X500Name("CN=mirth-connect");
+            X500Name sslSubjectName = new X500Name(String.format("CN=%s", BrandingConstants.SERVER_CERTIFICATE_CN));
             SubjectPublicKeyInfo sslSubjectKey = SubjectPublicKeyInfo.getInstance(sslKeyPair.getPublic().getEncoded());
             X509v3CertificateBuilder sslCertBuilder = new X509v3CertificateBuilder(caSubjectName, new BigInteger(50, new SecureRandom()), startDate, expiryDate, sslSubjectName, sslSubjectKey);
             sslCertBuilder.addExtension(org.bouncycastle.asn1.x509.Extension.authorityKeyIdentifier, false, new AuthorityKeyIdentifier(caCert.getEncoded()));
