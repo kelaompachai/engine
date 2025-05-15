@@ -5,25 +5,26 @@ import javax.swing.ImageIcon;
 public class BrandingConstants {
 
     public static final String PRODUCT_NAME = "Open Integration Engine";
-    public static final String VENDOR_NAME = "Open Integration Engine";
+    public static final String COMPANY_NAME = "Open Integration Engine";
 
     /*
         Sets the title of the Administrator window
      */
-    public static final String WINDOW_TITLE = "OpenIntegrationEngine Administrator";
+    public static final String WINDOW_TITLE = "Open Integration Engine Administrator";
 
     public static final String ISSUE_TRACKER_LOCATION = "https://github.com/openintegrationengine/engine/issues";
 
 
     // The URL that is opened when clicking the bottom image in Login window
     // The one where you're asked for server URL, username, and password
-    public static final String COMPANY_URL = "https://github.com/openintegrationengine";
-    public static final String COMPANY_TOOLTIP = "OpenIntegrationEngine";
+    public static final String COMPANY_URL = "https://openintegrationengine.org";
+    public static final String COMPANY_TOOLTIP = "Open Integration Engine";
 
 
     // The URL that is opened when clicking the image in the Top right corner of the main administrator window
-    public static final String PRODUCT_URL = "https://github.com/openintegrationengine";
-    public static final String PRODUCT_TOOLTIP = "OpenIntegrationEngine";
+    // The URL that is opened when clicking "Visit + PRODUCT_NAME" button in Administrator
+    public static final String PRODUCT_URL = "https://github.com/openintegrationengine/engine";
+    public static final String PRODUCT_TOOLTIP = "Open Integration Engine";
 
 
     // The URL that is opened when clicking "Help" button in Administrator
@@ -32,9 +33,6 @@ public class BrandingConstants {
     // The "More info" in Server settings "Provide usage statistics"
     public static final String PRIVACY_URL = "https://github.com/openintegrationengine";
     public static final String PRIVACY_TOOLTIP = "Privacy Information";
-
-    // The URL that is opened when clicking "Visit + PRODUCT_NAME" button in Administrator
-    public static final String HOMEPAGE_URL = "https://openintegrationengine.org/";
 
     // Icons
     // Favicon must be at 32px x 32px scale

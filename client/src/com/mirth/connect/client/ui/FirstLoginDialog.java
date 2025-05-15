@@ -152,8 +152,8 @@ public class FirstLoginDialog extends javax.swing.JDialog implements UserDialogI
         
         registerCheckBox.setBackground(new java.awt.Color(255, 255, 255));
         registerCheckBox.setSelected(true);
-        registerCheckBox.setText(String.format("Register user with %s", BrandingConstants.VENDOR_NAME));
-        registerCheckBox.setToolTipText(String.format("<html>Register your user information with %s to help us<br>improve the product and provide better service.</html>", BrandingConstants.VENDOR_NAME));
+        registerCheckBox.setText(String.format("Register user with %s", BrandingConstants.COMPANY_NAME));
+        registerCheckBox.setToolTipText(String.format("<html>Register your user information with %s to help us<br>improve the product and provide better service.</html>", BrandingConstants.COMPANY_NAME));
         registerCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerCheckBoxActionPerformed(evt);
@@ -162,7 +162,7 @@ public class FirstLoginDialog extends javax.swing.JDialog implements UserDialogI
         
         userConsentCheckBox.setBackground(new java.awt.Color(255, 255, 255));
         userConsentCheckBox.setSelected(true);
-        userConsentCheckBox.setText(String.format("I consent to receive email updates and marketing messages from %s.", BrandingConstants.VENDOR_NAME));
+        userConsentCheckBox.setText(String.format("I consent to receive email updates and marketing messages from %s.", BrandingConstants.COMPANY_NAME));
         userConsentCheckBox.setToolTipText("<html></html>"); 
 
         contentTextPane.setContentType("text/html");

@@ -2068,7 +2068,7 @@ public class Frame extends JXFrame {
     // --- All bound actions are beneath this point --- //
     // ////////////////////////////////////////////////////////////
     public void goToMirth() {
-        BareBonesBrowserLaunch.openURL(BrandingConstants.HOMEPAGE_URL);
+        BareBonesBrowserLaunch.openURL(BrandingConstants.PRODUCT_URL);
     }
 
     public void goToUserAPI() {

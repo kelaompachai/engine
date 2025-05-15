@@ -715,7 +715,7 @@ public class SettingsPanelServer extends AbstractSettingsPanel {
         provideUsageStatsYesRadio.setBackground(getBackground());
         provideUsageStatsYesRadio.setToolTipText(String.format(
             "<html>Toggles sending usage statistics to %s. These statistics <br>do not contain any PHI or channel/script implementations.</html>",
-            BrandingConstants.VENDOR_NAME
+            BrandingConstants.COMPANY_NAME
         ));
         provideUsageStatsButtonGroup.add(provideUsageStatsYesRadio);
 
@@ -723,7 +723,7 @@ public class SettingsPanelServer extends AbstractSettingsPanel {
         provideUsageStatsNoRadio.setBackground(getBackground());
         provideUsageStatsNoRadio.setToolTipText(String.format(
             "<html>Toggles sending usage statistics to %s. These statistics <br>do not contain any PHI or channel/script implementations.</html>",
-            BrandingConstants.VENDOR_NAME
+            BrandingConstants.COMPANY_NAME
         ));
         provideUsageStatsButtonGroup.add(provideUsageStatsNoRadio);
 

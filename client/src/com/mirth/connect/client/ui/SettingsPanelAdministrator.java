@@ -599,7 +599,7 @@ public class SettingsPanelAdministrator extends AbstractSettingsPanel {
         checkForNotificationsYesRadio.setBackground(userSettingsPanel.getBackground());
         checkForNotificationsYesRadio.setToolTipText(String.format(
             "<html>Checks for notifications from %s (announcements, available updates, etc.)</html>",
-            BrandingConstants.VENDOR_NAME
+            BrandingConstants.COMPANY_NAME
         ));
         notificationButtonGroup.add(checkForNotificationsYesRadio);
 
@@ -607,7 +607,7 @@ public class SettingsPanelAdministrator extends AbstractSettingsPanel {
         checkForNotificationsNoRadio.setBackground(userSettingsPanel.getBackground());
         checkForNotificationsNoRadio.setToolTipText(String.format(
             "<html>Checks for notifications from %s (announcements, available updates, etc.)</html>",
-            BrandingConstants.VENDOR_NAME
+            BrandingConstants.COMPANY_NAME
         ));
         notificationButtonGroup.add(checkForNotificationsNoRadio);
 
