@@ -162,7 +162,7 @@ public class ConnectServiceUtil {
         int[] curVersion = toVersionArray(currentVersion);
         // return nodes.takeWhile(node -> isCurrentOlderThan(curVersion, node.get("tag_name").asText()));
         // stream.takeWhile introduced in java 9
-        return nodes.filter(node -> isCurrentOlderThan(curVersion, node.get("tag_name").asText()));
+        return nodes.filter(node -> isCurrentOlderThan(curVersion, toVersionArray(node.get("tag_name").asText())));
     }
 
     /**
@@ -225,9 +225,37 @@ public class ConnectServiceUtil {
      * @param anotherVersion
      * @return true if the current version is less than than the other
      */
-    protected static boolean isCurrentOlderThan (int[] currentVersion, String anotherVersion) {
-        // Arrays.compare introduced in Java 9
-        return Arrays.compare(currentVersion, toVersionArray(anotherVersion)) < 0;
+
+    protected static boolean isCurrentOlderThan (int[] currVersion, int[] anotherVersion) {
+
+        int CVlen = currVersion.length;
+        int AVlen = anotherVersion.length;
+
+        currVersion = CVlen < AVlen ? fillShorterVersionArray(currVersion, AVlen) : currVersion;
+        anotherVersion = AVlen < CVlen ? fillShorterVersionArray(anotherVersion, CVlen) : anotherVersion;
+
+
+        boolean isOlderThan = false;
+        for (int i = 0; i < currVersion.length; i += 1) {
+        if (currVersion[i] < anotherVersion[i]) {
+            isOlderThan = true;
+            break;
+        } else if (currVersion[i] > anotherVersion[i]) {
+            break;
+        }
+        }
+        return isOlderThan;
+    }
+
+    // Also need to equalize versionArray lengths
+    protected static int[] fillShorterVersionArray (int[] shorterVersionArray, int longerVersionArrayLength) {
+        int[] newVersionArray = new int[longerVersionArrayLength];
+
+        for (int i = 0; i < shorterVersionArray.length; i += 1) {
+        newVersionArray[i] = shorterVersionArray[i];
+        }
+        // Arrays.fill(newVersionArray, shorterVersionArray.length, newVersionArray.length - 1, 0);
+        return newVersionArray;
     }
 
     /**
