@@ -125,7 +125,10 @@ public class ConnectServiceUtil {
             if (statusCode == HttpStatus.SC_OK) {
                 responseEntity = httpResponse.getEntity();
 
-                var newerOnly = filterForNewerVersions(toJsonStream(responseEntity), mirthVersion);
+                // var newerOnly = filterForNewerVersions(toJsonStream(responseEntity), mirthVersion);
+                Stream<JsonNode> newerOnly = filterForNewerVersions(toJsonStream(responseEntity), mirthVersion);
+                // var introduced in java 10
+
                 validNotifications = newerOnly.map(node -> toNotification(node)).collect(Collectors.toList());
             } else {
                 throw new ClientException("Status code: " + statusCode);
@@ -157,7 +160,9 @@ public class ConnectServiceUtil {
      */
     protected static Stream<JsonNode> filterForNewerVersions(Stream<JsonNode> nodes, String currentVersion) {
         int[] curVersion = toVersionArray(currentVersion);
-        return nodes.takeWhile(node -> isCurrentOlderThan(curVersion, node.get("tag_name").asText()));
+        // return nodes.takeWhile(node -> isCurrentOlderThan(curVersion, node.get("tag_name").asText()));
+        // stream.takeWhile introduced in java 9
+        return nodes.filter(node -> isCurrentOlderThan(curVersion, node.get("tag_name").asText()));
     }
 
     /**
@@ -221,6 +226,7 @@ public class ConnectServiceUtil {
      * @return true if the current version is less than than the other
      */
     protected static boolean isCurrentOlderThan (int[] currentVersion, String anotherVersion) {
+        // Arrays.compare introduced in Java 9
         return Arrays.compare(currentVersion, toVersionArray(anotherVersion)) < 0;
     }
 
