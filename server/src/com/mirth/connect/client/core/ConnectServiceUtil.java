@@ -125,7 +125,10 @@ public class ConnectServiceUtil {
             HttpClientContext getContext = HttpClientContext.create();
             getContext.setRequestConfig(createRequestConfig());
             httpClient = getClient(protocols, cipherSuites);
-            httpResponse = httpClient.execute(new HttpGet(URL_NOTIFICATIONS), getContext);
+            HttpGet httpget = new HttpGet(URL_NOTIFICATIONS);
+            // adding header makes github send back body as rendered html
+            httpget.addHeader("Accept", "application/vnd.github.html+json");
+            httpResponse = httpClient.execute(httpget, getContext);
 
             int statusCode = httpResponse.getStatusLine().getStatusCode();
             if (statusCode == HttpStatus.SC_OK) {
@@ -259,27 +262,7 @@ public class ConnectServiceUtil {
      * @return an HTML String
      */
     protected static String toNotificationContent (JsonNode node) {
-        String escapedName = StringEscapeUtils.escapeHtml4(node.get("name").asText());
-        String escapedReleaseUrl = StringEscapeUtils.escapeHtml4(node.get("html_url").asText());
-
-        StringBuilder content = new StringBuilder(256);
-
-        // create header with name
-        content.append("<h2>")
-            .append(escapedName)
-            .append("</h2>");
-
-        // announce there is a new version
-        content.append("<h3>")
-            .append("A new version of Open Integration Engine is available!")
-            .append("</h3>");
-
-        // create a link to the release webpage
-        content.append("<a href=\"" + escapedReleaseUrl + "\">")
-            .append("Release Webpage")
-            .append("</a>");
-
-        return content.toString();
+        return node.get("body_html").asText();
     }
 
     public static int getNotificationCount(String serverId, String mirthVersion, Map<String, String> extensionVersions, Set<Integer> archivedNotifications, String[] protocols, String[] cipherSuites) {
