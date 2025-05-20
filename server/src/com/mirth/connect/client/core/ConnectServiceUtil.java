@@ -266,51 +266,11 @@ public class ConnectServiceUtil {
     }
 
     public static int getNotificationCount(String serverId, String mirthVersion, Map<String, String> extensionVersions, Set<Integer> archivedNotifications, String[] protocols, String[] cipherSuites) {
-        CloseableHttpClient client = null;
-        HttpPost post = new HttpPost();
-        CloseableHttpResponse response = null;
-
         int notificationCount = 0;
-
         try {
-            ObjectMapper mapper = new ObjectMapper();
-            String extensionVersionsJson = mapper.writeValueAsString(extensionVersions);
-            NameValuePair[] params = { new BasicNameValuePair("op", NOTIFICATION_COUNT_GET),
-                    new BasicNameValuePair("serverId", serverId),
-                    new BasicNameValuePair("version", mirthVersion),
-                    new BasicNameValuePair("extensionVersions", extensionVersionsJson) };
-            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(TIMEOUT).setConnectionRequestTimeout(TIMEOUT).setSocketTimeout(TIMEOUT).build();
-
-            post.setURI(URI.create(URL_CONNECT_SERVER + URL_NOTIFICATION_SERVLET));
-            post.setEntity(new UrlEncodedFormEntity(Arrays.asList(params), Charset.forName("UTF-8")));
-
-            HttpClientContext postContext = HttpClientContext.create();
-            postContext.setRequestConfig(requestConfig);
-            client = getClient(protocols, cipherSuites);
-            response = client.execute(post, postContext);
-            StatusLine statusLine = response.getStatusLine();
-            int statusCode = statusLine.getStatusCode();
-            if ((statusCode == HttpStatus.SC_OK)) {
-                HttpEntity responseEntity = response.getEntity();
-                Charset responseCharset = null;
-                try {
-                    responseCharset = ContentType.getOrDefault(responseEntity).getCharset();
-                } catch (Exception e) {
-                    responseCharset = ContentType.TEXT_PLAIN.getCharset();
-                }
-
-                List<Integer> notificationIds = mapper.readValue(IOUtils.toString(responseEntity.getContent(), responseCharset).trim(), new TypeReference<List<Integer>>() {
-                });
-                for (int id : notificationIds) {
-                    if (!archivedNotifications.contains(id)) {
-                        notificationCount++;
-                    }
-                }
-            }
-        } catch (Exception e) {
-        } finally {
-            HttpClientUtils.closeQuietly(response);
-            HttpClientUtils.closeQuietly(client);
+            notificationCount = getNotifications(serverId, mirthVersion, extensionVersions, protocols, cipherSuites).size();
+        } catch (Exception ignore) {
+           System.err.println("Failed to get notification count, defaulting to zero: " + ignore);
         }
         return notificationCount;
     }
