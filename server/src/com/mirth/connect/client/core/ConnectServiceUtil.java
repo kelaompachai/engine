@@ -208,16 +208,6 @@ public class ConnectServiceUtil {
     }
 
     /**
-     * Split a given version string into an int[].
-     * 
-     * @param version
-     * @return
-     */
-    protected static int[] toVersionArray(String version) {
-        return Arrays.stream(version.split("[\\.]")).mapToInt(Integer::parseInt).toArray();
-    }
-
-    /**
      * Compare the current version with another. If current is less than other, return true. All others,
      * including a malformed other, returns false.
      * 

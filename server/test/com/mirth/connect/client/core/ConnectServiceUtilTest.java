@@ -1,6 +1,5 @@
 package com.mirth.connect.client.core;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -84,20 +83,6 @@ public class ConnectServiceUtilTest {
         entity.setContentType(new BasicHeader("Content-Type", "application/json; charset = " + expectedCharset));
         Charset charset = ConnectServiceUtil.getCharset(entity);
         assertEquals(expectedCharset, charset.name());
-    }
-
-    @Test
-    public void test_toVersionThreeDigits() throws Exception {
-        int[] expected = { 4, 1, 5};
-        int[] parsedVersion = ConnectServiceUtil.toVersionArray("4.1.5");
-        assertArrayEquals(expected, parsedVersion);
-    }
-
-    @Test
-    public void test_toVersionFourDigits() throws Exception {
-        int[] expected = { 3, 12, 0, 4};
-        int[] parsedVersion = ConnectServiceUtil.toVersionArray("3.12.0.4");
-        assertArrayEquals(expected, parsedVersion);
     }
 
     @Test
