@@ -26,7 +26,6 @@ import java.util.stream.StreamSupport;
 
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.text.StringEscapeUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.StatusLine;
@@ -49,7 +48,6 @@ import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,9 +61,7 @@ public class ConnectServiceUtil {
     private final static String URL_CONNECT_SERVER = "https://connect.mirthcorp.com";
     private final static String URL_REGISTRATION_SERVLET = "/RegistrationServlet";
     private final static String URL_USAGE_SERVLET = "/UsageStatisticsServlet";
-    private final static String URL_NOTIFICATION_SERVLET = "/NotificationServlet";
     private static String URL_NOTIFICATIONS = "https://api.github.com/repos/openintegrationengine/engine/releases";
-    private static String NOTIFICATION_COUNT_GET = "getNotificationCount";
     private final static int TIMEOUT = 10000;
     public final static Integer MILLIS_PER_DAY = 86400000;
 
