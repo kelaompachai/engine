@@ -235,20 +235,10 @@ public class ConnectServiceUtil {
         notification.setDate(node.get("published_at").asText());
 
         // create the content html
-        String content = toNotificationContent(node);
+        String content = node.get("body_html").asText();
         notification.setContent(content);
 
         return notification;
-    }
-
-    /**
-     * Create the HTML content for a notification.
-     * 
-     * @param node
-     * @return an HTML String
-     */
-    protected static String toNotificationContent (JsonNode node) {
-        return node.get("body_html").asText();
     }
 
     public static int getNotificationCount(String serverId, String mirthVersion, Map<String, String> extensionVersions, Set<Integer> archivedNotifications, String[] protocols, String[] cipherSuites) {
