@@ -186,6 +186,6 @@ public class ConnectServiceUtilTest {
         assertEquals(orig.get("id").asInt(), (int)created.getId());
         assertEquals(orig.get("name").asText(), created.getName());
         assertEquals(orig.get("published_at").asText(), created.getDate());
-        assertNotNull(created.getContent());
+        assertEquals(orig.get("body_html").asText(), created.getContent());
     }
 }
